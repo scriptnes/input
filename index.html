@@ -45,7 +45,9 @@
             },
             methods: {
                 test: function () {
-                    this.message = 'clicked';
+                    if (this.firstObject.value === '456') {
+                        this.message = 'clicked';
+                    }
                 }
             },
             computed: {
@@ -54,10 +56,11 @@
                 },
 
                 msg: function () {
-                    if (this.firstObject.value === '456') {
-                        return "Equal";
+                    if (this.firstObject.value !== '456') {
+                        this.message = '';
+                        return "Test";
                     }
-                    return "Test";
+                    return "Equal";
                 }
             }
         })
