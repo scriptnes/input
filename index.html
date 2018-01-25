@@ -19,13 +19,11 @@
         <form id="add">
             <div class="md-layout md-flex">
                 <md-field md-clearable>
-                    <md-input type="text" v-model="firstObject.value"></md-input>
+                    <md-input type="text" v-model="firstObject.value" :value="firstObject.value === null ? '' : firstObject.value"></md-input>
                 </md-field>
                 <md-button :disabled="disabled" @click="clickMe" class="md-primary md-raised">Test</md-button>
             </div>
         </form>
-
-
         <pre>{{ $data }}</pre>
     </div>
 
@@ -38,20 +36,16 @@
             data: {
 
                 firstObject: {
-                    value: '123',
+                    value: null,
                 },
-
                 secondObject: {
                     value: '456',
                 }
-
             },
             methods: {
                 clickMe: function () {
                     console.log('Call clickMe');
                 }
-
-
             },
             computed: {
                 disabled: function () {
