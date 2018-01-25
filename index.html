@@ -21,7 +21,7 @@
                 <md-field md-clearable>
                     <md-input type="text" v-model="firstObject.value" :value="firstObject.value === null ? '' : firstObject.value"></md-input>
                 </md-field>
-                <md-button :disabled="disabled" @click="clickMe" class="md-primary md-raised">Test</md-button>
+                <md-button :disabled="disabled" @click="clickMe" class="md-primary md-raised">{{message}}</md-button>
             </div>
         </form>
         <pre>{{ $data }}</pre>
@@ -40,11 +40,13 @@
                 },
                 secondObject: {
                     value: '456',
-                }
+                },
+
+                message: 'Test',
             },
             methods: {
                 clickMe: function () {
-                    console.log('Call clickMe');
+                    this.message = 'OK';
                 }
             },
             computed: {
