@@ -19,7 +19,7 @@
         <form id="add">
             <div class="md-layout md-flex">
                 <md-field md-clearable>
-                    <md-input type="text" v-model="firstObject.value" :value="firstObject.value === null ? '' : firstObject.value"></md-input>
+                    <md-input type="text" v-model="firstObject.value" :value="firstObject.value === '' ? firstObject.value = null : firstObject.value"></md-input>
                 </md-field>
                 <md-button :disabled="disabled" @click="clickMe" class="md-primary md-raised">{{message}}</md-button>
             </div>
