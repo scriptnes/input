@@ -22,7 +22,7 @@
                     <md-input type="text" v-model="firstObject.value" :value="firstObject.value === '' ? firstObject.value = null : firstObject.value"
                         placeholder="Enter 456"></md-input>
                 </md-field>
-                <md-button :disabled="disabled" @click="clickMe" class="md-primary md-raised">{{message}}</md-button>
+                <md-button :disabled="disabled" @click="clickMe" class="md-primary md-raised">{{msg}}</md-button>
             </div>
         </form>
         <pre>{{ $data }}</pre>
@@ -43,7 +43,7 @@
                     value: '456',
                 },
 
-                message: 'Test',
+
             },
             methods: {
                 clickMe: function () {
@@ -54,6 +54,13 @@
                 disabled: function () {
                     return JSON.stringify(this.firstObject) !== JSON.stringify(this.secondObject);
                 },
+
+                msg: function () {
+                    if (!this.firstObject.value) {
+                        return "Test";
+                    }
+                    return "OK!";
+                }
             }
         })
     </script>
