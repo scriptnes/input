@@ -56,10 +56,10 @@
                 },
 
                 msg: function () {
-                    if (!this.firstObject.value) {
-                        return "Test";
+                    if (this.firstObject.value === '456') {
+                        return "Equal";
                     }
-                    return "OK!";
+                    return "Test";
                 }
             }
         })
