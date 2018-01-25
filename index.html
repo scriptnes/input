@@ -22,7 +22,7 @@
                     <md-input type="text" v-model="firstObject.value" :value="firstObject.value === '' ? firstObject.value = null : firstObject.value"
                         placeholder="Enter 456"></md-input>
                 </md-field>
-                <md-button :disabled="disabled" @click="clickMe" class="md-primary md-raised">{{msg}}</md-button>
+                <md-button :disabled="disabled" @click="test" class="md-primary md-raised">{{ msg }}</md-button>
             </div>
         </form>
         <pre>{{ $data }}</pre>
@@ -35,19 +35,17 @@
         new Vue({
             el: '#demo',
             data: {
-
                 firstObject: {
                     value: null,
                 },
                 secondObject: {
                     value: '456',
                 },
-
-
+                message: '',
             },
             methods: {
-                clickMe: function () {
-                    this.message = 'OK';
+                test: function () {
+                    this.message = 'clicked';
                 }
             },
             computed: {
