@@ -45,7 +45,7 @@
             methods: {
                 test: function () {
                     if (this.firstObject.value === '456') {
-                        this.message = 'clicked';
+                        this.message = 'Clicked';
                     }
                 }
             },
@@ -61,9 +61,9 @@
                 msg: function () {
                     if (this.firstObject.value !== '456') {
                         this.message = '';
-                        return "Test";
+                        return "Disabled";
                     }
-                    return "Equal";
+                    return "Enabled";
                 },
             }
         })
