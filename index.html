@@ -19,8 +19,7 @@
         <form id="add">
             <div class="md-layout md-flex" style="width:200px;">
                 <md-field md-clearable>
-                    <md-input type="text" v-model="firstObject.value" :value="firstObject.value === '' ? firstObject.value = null : firstObject.value"
-                        placeholder="Enter 456"></md-input>
+                    <md-input type="text" v-model="firstObject.value" :value="value" placeholder="Enter 456"></md-input>
                 </md-field>
                 <md-button :disabled="disabled" @click="test" class="md-primary md-raised">{{ msg }}</md-button>
             </div>
@@ -55,13 +54,17 @@
                     return JSON.stringify(this.firstObject) !== JSON.stringify(this.secondObject);
                 },
 
+                value: function () {
+                    return this.firstObject.value === '' ? this.firstObject.value = null : this.firstObject.value;
+                },
+
                 msg: function () {
                     if (this.firstObject.value !== '456') {
                         this.message = '';
                         return "Test";
                     }
                     return "Equal";
-                }
+                },
             }
         })
     </script>
